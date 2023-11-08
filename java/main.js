@@ -112,16 +112,14 @@ document.getElementById("play").addEventListener("click",function(){
 } */
 
 let PcN=("");
-let i = 0;
-while ( i < 16 ) {
+let Pcn = 0;
+while ( PcN < 16 ) {
     PcN=`${Math.floor(Math.random() * 16)+1}`;
-    i++;
     
-    if((!(PcNs[PcN]))==true){
+    if((PcNs[PcN])==false){
         PcNs.push(PcN);
     }   
-    
-    else{}
+
 }
 console.log(PcNs)
 
