@@ -97,7 +97,7 @@ document.getElementById("play").addEventListener("click",function(){
         }
 
         function GenBox(){
-            var newDiv = document.createElement("div");
+            newDiv = document.createElement("div");
             newDiv.innerHTML+=(n)
             container.append(newDiv);
             newDiv.classList.add("box-difficile");
@@ -109,7 +109,7 @@ document.getElementById("play").addEventListener("click",function(){
 })
 
 function clicked(newDiv){
-    newDiv.addEventListener("click",function(){
+        newDiv.addEventListener("click",function(){
         newDiv.classList.add('highlight');
     if(newDiv.innerHTML==(PcNumb1)||(PcNumb2)||(PcNumb3)||(PcNumb4)||(PcNumb5)||(PcNumb6)){
         newDiv.classList.remove('highlight');
