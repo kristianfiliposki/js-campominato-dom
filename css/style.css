@@ -35,6 +35,7 @@ color: white;
 .box-medio{width: calc(100% / 9);}
 .box-difficile{width: calc(100% / 7);}
 .highlight{background-color: rgb(109, 108, 108)}
+.errorbox{background-color: red;}
 
 
 /* .box{

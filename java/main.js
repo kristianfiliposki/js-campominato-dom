@@ -1,5 +1,4 @@
 let boxes="";
-let PcNs=[];
 const container=document.getElementById("container");
 let box=document.querySelector("#container div")
 
@@ -40,20 +39,15 @@ document.getElementById("play").addEventListener("click",function(){
             const numbers=n;
             n++;
             GenBox(n);          
-            Game();
         }
 
         function GenBox(){
-            let newDiv = document.createElement("div");
+            var newDiv = document.createElement("div");
             newDiv.innerHTML+=(n)
             container.append(newDiv);
             newDiv.classList.add("box-facile");
-            
-            newDiv.addEventListener("click",function(){
-                if(PcN==n){console.log("hai perso")}
-                newDiv.classList.toggle('highlight');
-            })
-        }
+            clicked(newDiv)
+        }   
             
     }
     /*se medio  */
@@ -72,20 +66,12 @@ document.getElementById("play").addEventListener("click",function(){
         }
 
         function GenBox(){
-            let newDiv = document.createElement("div");
+            var newDiv = document.createElement("div");
             newDiv.innerHTML+=(n)
             container.append(newDiv);
             newDiv.classList.add("box-medio");
-            for (i = 0;i< 16;i++ ) {
-                PcN=`${Math.floor(Math.random() * 81)+1}`;
-                PcNs.push(PcN);
-                console.log(PcNs)
-            }
-            newDiv.addEventListener("click",function(){
-                if(PcN==n){console.log("hai perso")}
-                newDiv.classList.toggle('highlight');
-            })
-        }   
+            clicked(newDiv)
+        }    
 
     }
     /* se difficile */
@@ -93,6 +79,7 @@ document.getElementById("play").addEventListener("click",function(){
         let box=document.querySelector("#container div")
         let newDiv = document.createElement("div");
         container.innerHTML="";
+        GenNum()
         
         
         
@@ -105,50 +92,39 @@ document.getElementById("play").addEventListener("click",function(){
         }
 
         function GenBox(){
-            let newDiv = document.createElement("div");
+            var newDiv = document.createElement("div");
             newDiv.innerHTML+=(n)
             container.append(newDiv);
             newDiv.classList.add("box-difficile");
-            
-            PcN=`${Math.floor(Math.random() * 49)}`;
-            PcNs.push(PcN);
-            console.log(PcNs)
-            newDiv.addEventListener("click",function(){
-                
-            if(PcN==n){console.log("hai perso")}
-            newDiv.classList.toggle('highlight');
-            })
-
+            clicked(newDiv)            
         }   
-
+        
     }
     
 })
 
-function Game(){
-    PcN=`${Math.floor(Math.random() * 49)}`;
-            PcNs.push(PcN);
-            console.log(PcNs)
-            newDiv.addEventListener("click",function(){
+function clicked(newDiv){
+    newDiv.addEventListener("click",function(){
+        newDiv.classList.add('highlight');
+        GenNum()
+    if(newDiv.innerHTML==PcNumb){
+        newDiv.classList.remove('highlight');
+        newDiv.classList.add('errorbox');}
+    })
+}
+ 
 
-            })
 
-            return PcNs
-
+function GenNum(PcNumb) {
+    let PcNumbers=[];
+    for (let i = 0; i < 16; i++) {
+        PcNumb=console.log(Math.floor(Math.random(i) * 49)+1);
+        PcNumbers.push(PcNumb)
+    }
+    return(PcNumbers)
 } 
 
 
-
-/* let i = 0;
-while (i< 16 ) {
-    PcN=`${Math.floor(Math.random() * 100)+1}`;
-    i++
-    PcNs.push(PcN);
-}
-
-
-
-console.log(PcNs) */
 /* box.addEventListener("click",function(){
    if(box.innerHTML==PcNs[0]||box.innerHTML==PcNs[1]||box.innerHTML==PcNs[2]||box.innerHTML==PcNs[3]||box.innerHTML==PcNs[4]||box.innerHTML==PcNs[5]||box.innerHTML==PcNs[6]||box.innerHTML==PcNs[7]||box.innerHTML==PcNs[8]||box.innerHTML==PcNs[9]||box.innerHTML==PcNs[10]||box.innerHTML==PcNs[11]||box.innerHTML==PcNs[12]||box.innerHTML==PcNs[13]||box.innerHTML==PcNs[14]||box.innerHTML==PcNs[15]){
     
