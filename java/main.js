@@ -1,6 +1,12 @@
 let boxes="";
 const container=document.getElementById("container");
 let box=document.querySelector("#container div")
+PcNumb1=console.log(Math.floor(Math.random() * 49)+1);
+PcNumb2=console.log(Math.floor(Math.random() * 49)+1);
+PcNumb3=console.log(Math.floor(Math.random() * 49)+1);
+PcNumb4=console.log(Math.floor(Math.random() * 49)+1);
+PcNumb5=console.log(Math.floor(Math.random() * 49)+1);
+PcNumb6=console.log(Math.floor(Math.random() * 49)+1);
 
 
 /* scelgo la modalita */
@@ -79,7 +85,6 @@ document.getElementById("play").addEventListener("click",function(){
         let box=document.querySelector("#container div")
         let newDiv = document.createElement("div");
         container.innerHTML="";
-        GenNum()
         
         
         
@@ -106,8 +111,7 @@ document.getElementById("play").addEventListener("click",function(){
 function clicked(newDiv){
     newDiv.addEventListener("click",function(){
         newDiv.classList.add('highlight');
-        GenNum()
-    if(newDiv.innerHTML==PcNumb){
+    if(newDiv.innerHTML==(PcNumb1)||(PcNumb2)||(PcNumb3)||(PcNumb4)||(PcNumb5)||(PcNumb6)){
         newDiv.classList.remove('highlight');
         newDiv.classList.add('errorbox');}
     })
@@ -115,14 +119,14 @@ function clicked(newDiv){
  
 
 
-function GenNum(PcNumb) {
+/* function GenNum() {
     let PcNumbers=[];
     for (let i = 0; i < 16; i++) {
         PcNumb=console.log(Math.floor(Math.random(i) * 49)+1);
         PcNumbers.push(PcNumb)
     }
     return(PcNumbers)
-} 
+}  */
 
 
 /* box.addEventListener("click",function(){
