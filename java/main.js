@@ -5,10 +5,6 @@ const container=document.getElementById("container");
 let box=document.querySelector("#container div")
 let newDivs=[]
 
-
-
-
-
 /* scelgo la modalita con cui giocare*/
 
 /* facile */
@@ -115,12 +111,14 @@ document.getElementById("play").addEventListener("click",function(){
         }
     })
     /* ti ho odiato!!! */
+
+
     function clicked(div,number){
         div.addEventListener("click",function(){
         div.classList.add('highlight');
     if(numeriGenerati.includes(number)){
         div.classList.remove('highlight');
-        div.classList.add('errorbox');}
-        alert("hai perso!")
+        div.classList.add('errorbox');
+        alert("hai perso!")}
     })
     }
