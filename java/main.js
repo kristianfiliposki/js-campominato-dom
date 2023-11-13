@@ -58,93 +58,69 @@ document.getElementById("play").addEventListener("click",function(){
             newDivs.push(n)
             container.append(newDiv);
             clicked(newDiv,n)  
+        }    
+    }
+})
+/*se medio  */
+document.getElementById("play").addEventListener("click",function(){    
+    if(boxes==81){
+        
+        
+        for (let i = 0; i < 6; i++) {
+            PcNumb=Math.floor(Math.random() * 81)+1;
+            numeriGenerati.push(PcNumb);
+            console.log(numeriGenerati)
         }
         
+        
+        let box=document.querySelector("#container div")
+        container.innerHTML="";
+        
+        
+        for(let n = 1 ;n <= boxes;n++) {
+            newDiv = document.createElement("div");
+            newDiv.classList.add("box-medio");
+            newDiv.innerHTML=(n)
+            newDivs.push(n)
+            container.append(newDiv);
+            clicked(newDiv,n)  
+        } 
+    }
+})
 
-        function clicked(div,number){
-            div.addEventListener("click",function(){
-            div.classList.add('highlight');
-        if(numeriGenerati.includes(number)){
-            div.classList.remove('highlight');
-            div.classList.add('errorbox');}
-        })
-    }
-  
-    }
-})
-    /*se medio  */
-    document.getElementById("play").addEventListener("click",function(){    
-        if(boxes==81){
-            
-    
-            for (let i = 0; i < 6; i++) {
-                PcNumb=Math.floor(Math.random() * 81)+1;
-                numeriGenerati.push(PcNumb);
-                console.log(numeriGenerati)
-            }
-            
-            
-            let box=document.querySelector("#container div")
-            container.innerHTML="";
-    
+/* se difficile */
+document.getElementById("play").addEventListener("click",function(){    
+    if(boxes==49){
         
-            for(let n = 1 ;n <= boxes;n++) {
-                newDiv = document.createElement("div");
-                newDiv.classList.add("box-medio");
-                newDiv.innerHTML=(n)
-                newDivs.push(n)
-                container.append(newDiv);
-                clicked(newDiv,n)  
-            }
-            
-    
-            function clicked(div,number){
-                div.addEventListener("click",function(){
-                div.classList.add('highlight');
-            if(numeriGenerati.includes(number)){
-                div.classList.remove('highlight');
-                div.classList.add('errorbox');}
-            })
-        }
-      
-        }
-})
-    
-    /* se difficile */
-    document.getElementById("play").addEventListener("click",function(){    
-        if(boxes==49){
-            
-    
-            for (let i = 0; i < 6; i++) {
-                PcNumb=Math.floor(Math.random() * 49)+1;
-                numeriGenerati.push(PcNumb);
-                console.log(numeriGenerati)
-            }
-            
-            
-            let box=document.querySelector("#container div")
-            container.innerHTML="";
-    
         
-            for(let n = 1 ;n <= boxes;n++) {
-                newDiv = document.createElement("div");
-                newDiv.classList.add("box-difficile");
-                newDiv.innerHTML=(n)
-                newDivs.push(n)
-                container.append(newDiv);
-                clicked(newDiv,n)  
+        for (let i = 0; i < 6; i++) {
+            PcNumb=Math.floor(Math.random() * 49)+1;
+            numeriGenerati.push(PcNumb);
+            console.log(numeriGenerati)
+        }
+        
+        
+        let box=document.querySelector("#container div")
+        container.innerHTML="";
+        
+        
+        for(let n = 1 ;n <= boxes;n++) {
+            newDiv = document.createElement("div");
+            newDiv.classList.add("box-difficile");
+            newDiv.innerHTML=(n)
+            newDivs.push(n)
+            container.append(newDiv);
+            clicked(newDiv,n)  
             }
-            
-    
-            function clicked(div,number){
-                div.addEventListener("click",function(){
-                div.classList.add('highlight');
-            if(numeriGenerati.includes(number)){
-                div.classList.remove('highlight');
-                div.classList.add('errorbox');}
-            })
         }
-      
-        }
-})
-/* ti ho odiato!!! */
+    })
+    /* ti ho odiato!!! */
+    function clicked(div,number){
+        div.addEventListener("click",function(){
+        div.classList.add('highlight');
+    if(numeriGenerati.includes(number)){
+        div.classList.remove('highlight');
+        div.classList.add('errorbox');}
+        alert("hai perso!")
+    })
+    }
