@@ -1,16 +1,25 @@
-
-header{padding: 10px 30px;}
+header{
+    background-color: black;
+    height: 10vh;
+}
+main{
+    background:url(https://e1.pxfuel.com/desktop-wallpaper/843/381/desktop-wallpaper-rick-and-morty-space-rick-and-morty-outer-space.jpg);
+    background-size: cover;
+    height: 80vh
+};
+.scorebox{
+    border: 1px solid white;
+}
 
 #container{
-    width: 70%;
+    width: 90%;
     margin: auto;
     height: 70vh;
     background-color: black;
 }
 
-main{
-    margin: 4% 0%;
-    background-color: gainsboro;
+.box-numeri{
+    padding: 4% 0%;
 }
 
 .box{
@@ -34,7 +43,11 @@ color: white;
 .box-facile{width: calc(100% / 10);}
 .box-medio{width: calc(100% / 9);}
 .box-difficile{width: calc(100% / 7);}
-.highlight{background-color: rgb(109, 108, 108)}
+.highlight{
+    background: url(https://wallpaperaccess.com/full/3958017.jpg);
+    background-size: cover;
+    color: white;
+}
 .errorbox{background-color: red;}
 
 

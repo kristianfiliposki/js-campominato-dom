@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="./css/utilities.css">
 </head>
 <body>
-    <header class="d-flex flex-justify-between flex-align-center">
-        <div>
+    <header class="d-flex flex-justify-between flex-align-center bg-black c-white">
+        <div class="d-flex flex-align-center">
             <h1>Campo Minato</h1>
+            <div class="w-10 h-10"><img src="./rick-and-morty-logo-font-free-download.jpeg" alt="" class="w-100 h-100"></div>
         </div>
         <div class="d-flex ">
             <div class="d-flex flex-align-center">Difficoltà:</div>
@@ -33,11 +34,17 @@
         </div>
     </header>
 
-    <main class="d-flex flex-justify-center flex-align-center">
-        <div id="container" class="d-flex f-wrap"></div>
+    <main >
+        <div class="d-flex flex-justify-center flex-align-center box-numeri">
+            <div id="container" class="d-flex f-wrap"></div>
+        </div>
     </main>
-
-    <footer></footer>
+    <footer>
+        <div class=" d-flex flex-align-center flex-justify-center bg-black c-white scorebox vh-10 fs-3">
+            <div>Punteggio: </div>
+            <div id="score"></div>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="./java/main.js"></script>

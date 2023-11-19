@@ -2,14 +2,17 @@
 let boxes="";
 let numeriGenerati=[]
 const container=document.getElementById("container");
-let box=document.querySelector("#container div")
+const score=document.getElementById("score");
+let box=document.querySelector("#container div");
 let newDivs=[]
+let counter="0"
 
 /* scelgo la modalita con cui giocare*/
 
 /* facile */
 document.getElementById("facile").addEventListener("click",function(){
     boxes=100;
+    counter=0;
     console.log(`ciao le caselle sono ${boxes}`)
 
 })
@@ -17,6 +20,7 @@ document.getElementById("facile").addEventListener("click",function(){
 /* medio */
 document.getElementById("medio").addEventListener("click",function(){
     boxes=81;
+    counter=0;
     console.log(`ciao le caselle sono ${boxes}`)
     
     
@@ -25,6 +29,7 @@ document.getElementById("medio").addEventListener("click",function(){
 /* difficile */
 document.getElementById("difficile").addEventListener("click",function(){
     boxes=49;
+    counter=0;
     console.log(`ciao le caselle sono ${boxes}`)
     
 })
@@ -88,7 +93,6 @@ document.getElementById("play").addEventListener("click",function(){
 document.getElementById("play").addEventListener("click",function(){    
     if(boxes==49){
         
-        
         for (let i = 0; i < 6; i++) {
             PcNumb=Math.floor(Math.random() * 49)+1;
             numeriGenerati.push(PcNumb);
@@ -115,10 +119,19 @@ document.getElementById("play").addEventListener("click",function(){
 
     function clicked(div,number){
         div.addEventListener("click",function(){
-        div.classList.add('highlight');
-    if(numeriGenerati.includes(number)){
-        div.classList.remove('highlight');
-        div.classList.add('errorbox');
-        alert("hai perso!")}
+            div.classList.remove('highlight');
+            div.classList.add('highlight');
+            if(numeriGenerati.includes(number)){
+                div.classList.remove('highlight');
+                div.classList.add('errorbox');
+                alert("hai perso!")}
+                else{
+                counter++;
+                console.log(counter);
+                score.innerHTML=counter;
+
+}
     })
     }
+
+   
