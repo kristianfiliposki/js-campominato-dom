@@ -58,7 +58,7 @@ document.getElementById("play").addEventListener("click",function(){
             newDiv.innerHTML=(n)
             newDivs.push(n)
             container.append(newDiv);
-            clicked(newDiv,n)  
+            clicked(newDiv,n,container)  
         }    
     }
 })
@@ -84,7 +84,7 @@ document.getElementById("play").addEventListener("click",function(){
             newDiv.innerHTML=(n)
             newDivs.push(n)
             container.append(newDiv);
-            clicked(newDiv,n)  
+            clicked(newDiv,n,container)  
         } 
     }
 })
