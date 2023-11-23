@@ -110,22 +110,23 @@ document.getElementById("play").addEventListener("click",function(){
             newDiv.innerHTML=(n)
             newDivs.push(n)
             container.append(newDiv);
-            clicked(newDiv,n)  
+            clicked(newDiv,n,container)  
             }
         }
     })
     /* ti ho odiato!!! */
 
 
-    function clicked(div,number){
+    function clicked(div,number,container){
         div.addEventListener("click",function(){
             div.classList.remove('highlight');
             div.classList.add('highlight');
             if(numeriGenerati.includes(number)){
                 div.classList.remove('highlight');
-                div.classList.add('errorbox');
-                alert("hai perso!")}
-                else{
+                container.innerHTML=""
+                container.classList.add('errorbox');
+                alert("hai perso,RIPROVA!")}
+            else{
                 counter++;
                 console.log(counter);
                 score.innerHTML=counter;
